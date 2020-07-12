@@ -1,21 +1,18 @@
-let n = 55;
-
-function timerFormat(n) {
-    return new Date(n * 1000).toISOString().substr(11, 8)
-}
-
 function render () {
-    const title = <h1>
-        Temps depuis l'ouverture de la page : <br/>
-        <span>{timerFormat(n)}</span>
-    </h1>;
+    const tasks = [
+        'task 1',
+        'task 2',
+        'task 3'
+    ];
 
-    ReactDOM.render(title, document.querySelector('#app'));
+    const todoList = <React.Fragment>
+        <h1 className="todolist" id="todolist-1">TODO List :</h1>
+        <ul>
+            { tasks.map((task, index) => <li key={index}>{task}</li>) }
+        </ul>
+    </React.Fragment>;
+
+    ReactDOM.render(todoList, document.querySelector('#app'));
 }
 
 render();
-
-window.setInterval(() => {
-    n++
-    render()
-}, 1000);
