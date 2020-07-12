@@ -1,4 +1,4 @@
-let n = 55;
+let n = 0;
 
 function timerFormat(n) {
     return new Date(n * 1000).toISOString().substr(11, 8)
